@@ -1,0 +1,357 @@
+#:import Snackbar kivymd.uix.snackbar.Snackbar
+
+BoxLayout:
+    
+    orientation: "vertical"
+	#size_hint_x: 0.72
+    
+
+    
+    MDToolbar:
+		id: toolbar
+        title: "Список покупок"
+        left_action_items:[["music",lambda x:app.musicon(self)],["music-off",lambda x:app.musicoff(self)]]
+	
+    MDTabs:
+        id: android_tabs
+		#on_tab_switch: app.on_tab_switch()
+
+        Tab:
+			id: tab1
+            text: "овощи"
+            MDGridLayout:
+				canvas.before:
+					Color:
+						rgba:(1,1,1,1)
+					Rectangle:
+						size: self.size
+						pos:self.pos
+						source: 'ov.png'
+                cols: 3
+                #size_hint_x: 0.4
+       
+
+                MDLabel:
+                    text: "Помидоры"
+				MDLabel:
+					id: v1
+					text:""
+                MDCheckbox:
+					selected_color: (0,1,0,1)
+                    unselected_color:(0,0,0,1)
+                    #pos_hint:{'center_x':1, 'center_y':.5}
+                    #size_hint:,.1 #None, None
+                    #size: '80dp','80dp'
+                    on_active: app.checkbox_click(self, self.active,app.numes[0],app.names[0])
+                MDLabel:
+                    text: "капуста"
+				MDLabel:
+					id: v2
+					text:""
+                MDCheckbox:
+                    selected_color: (0,1,0,1)
+                    unselected_color:(0,0,0,1)
+                    #size_hint: .1,.1
+					on_active: app.checkbox_click(self, self.active,app.numes[1],app.names[0])
+                MDLabel:
+                    text: "морковь"
+				MDLabel:
+					id: v3
+					text:""
+                MDCheckbox:
+                    selected_color: (0,1,0,1)
+                    unselected_color:(0,0,0,1)
+                    #size_hint: .1,.1
+					on_active: app.checkbox_click(self, self.active,app.numes[2],app.names[0])
+                MDLabel:
+                    text: "огурцы"
+				MDLabel:
+					id: v4
+					text:""
+                MDCheckbox:
+                    selected_color: (0,1,0,1)
+                    unselected_color:(0,0,0,1)
+                    #size_hint: .1,.1
+					on_active: app.checkbox_click(self, self.active,app.numes[3],app.names[0])
+                MDLabel:
+                    text: "картофель"
+				MDLabel:
+					id: v5
+					text:""
+                MDCheckbox:
+                    selected_color: (0,1,0,1)
+                    unselected_color:(0,0,0,1)
+                    #size_hint: .1,.1
+					on_active: app.checkbox_click(self, self.active,app.numes[4],app.names[0])
+        Tab:
+            text: "фрукты"
+            MDGridLayout:
+				canvas.before:
+					Color:
+						rgba:(1,1,1,1)
+					Rectangle:
+						size: self.size
+						pos:self.pos
+						source: 'fruit.png'
+                cols: 3
+                #size_hint_x: 0.8
+       
+
+				MDLabel:
+                    text: "бананы"
+				MDLabel:
+					id: f1
+					text:""
+                MDCheckbox:
+                    selected_color: (0,1,0,1)
+                    unselected_color:(0,0,0,1)
+                    #pos_hint:{'center_x':1, 'center_y':.5}
+                    #size_hint: .1,.1
+                    on_active: app.checkbox_click(self, self.active,app.numes[0],app.names[1])
+                MDLabel:
+                    text: "апельсины"
+				MDLabel:
+					id: f2
+					text:""
+                MDCheckbox:
+                    selected_color: (0,1,0,1)
+                    unselected_color:(0,0,0,1)
+                    #size_hint: .1,.1
+					on_active: app.checkbox_click(self, self.active,app.numes[1],app.names[1])
+                MDLabel:
+                    text: "клубника"
+				MDLabel:
+					id: f3
+					text:""
+                MDCheckbox:
+                    selected_color: (0,1,0,1)
+                    unselected_color:(0,0,0,1)
+                    #size_hint: .1,.1
+					on_active: app.checkbox_click(self, self.active,app.numes[2],app.names[1])
+                MDLabel:
+                    text: "яблоки"
+				MDLabel:
+					id: f4
+					text:""
+                MDCheckbox:
+                    selected_color: (0,1,0,1)
+                    unselected_color:(0,0,0,1)
+                    #size_hint: .1,.1
+					on_active: app.checkbox_click(self, self.active,app.numes[3],app.names[1])
+                MDLabel:
+                    text: "киви"
+				MDLabel:
+					id: f5
+					text:""
+                MDCheckbox:
+                    selected_color: (0,1,0,1)
+                    unselected_color:(0,0,0,1)
+                    #size_hint: .1,.1
+					on_active: app.checkbox_click(self, self.active,app.numes[4],app.names[1])
+
+        Tab:
+            text: "молочка"
+            MDGridLayout:
+				canvas.before:
+					Color:
+						rgba:(1,1,1,1)
+					Rectangle:
+						size: self.size
+						pos:self.pos
+						source: 'milk.png'
+                cols: 3
+                #size_hint_x: 0.8
+       
+
+                MDLabel:
+                    text: "молоко"
+				MDLabel:
+					id: m1
+					text:""
+                MDCheckbox:
+                    selected_color: (0,1,0,1)
+                    unselected_color:(0,0,0,1)
+                    #size_hint: .1,.1
+                    on_active: app.checkbox_click(self, self.active,app.numes[0],app.names[2])
+                MDLabel:
+                    text: "сыр"
+				MDLabel:
+					id: m2
+					text:""
+                MDCheckbox:
+                    selected_color: (0,1,0,1)
+                    unselected_color:(0,0,0,1)
+                    #size_hint: .1,.1
+					on_active: app.checkbox_click(self, self.active,app.numes[1],app.names[2])
+                MDLabel:
+                    text: "творог"
+				MDLabel:
+					id: m3
+					text:""
+                MDCheckbox:
+                    selected_color: (0,1,0,1)
+                    unselected_color:(0,0,0,1)
+                    #size_hint: .1,.1
+					on_active: app.checkbox_click(self, self.active,app.numes[2],app.names[2])
+                MDLabel:
+                    text: "йогурт"
+				MDLabel:
+					id: m4
+					text:""
+                MDCheckbox:
+                    selected_color: (0,1,0,1)
+                    unselected_color:(0,0,0,1)
+                    #size_hint: .1,.1
+					on_active: app.checkbox_click(self, self.active,app.numes[3],app.names[2])
+                MDLabel:
+                    text: "сметана"
+				MDLabel:
+					id: m5
+					text:""
+                MDCheckbox:
+                    selected_color: (0,1,0,1)
+                    unselected_color:(0,0,0,1)
+                    #size_hint: .1,.1
+					on_active: app.checkbox_click(self, self.active,app.numes[4],app.names[2])
+
+		Tab:
+            text: "кондитерка"
+            MDGridLayout:
+				canvas.before:
+					Color:
+						rgba:(1,1,1,1)
+					Rectangle:
+						size: self.size
+						pos:self.pos
+						source: 'dessert.png'
+                cols: 3
+                #size_hint_x: 0.8
+       
+
+                MDLabel:
+                    text: "конфеты"
+				MDLabel:
+					id: c1
+					text:""
+                MDCheckbox:
+                    selected_color: (0,1,0,1)
+                    unselected_color:(0,0,0,1)
+                    #size_hint: .1,.1
+                    on_active: app.checkbox_click(self, self.active,app.numes[0],app.names[3])
+                MDLabel:
+                    text: "пироженое"
+				MDLabel:
+					id: c2
+					text:""
+                MDCheckbox:
+                    selected_color: (0,1,0,1)
+                    unselected_color:(0,0,0,1)
+                    #size_hint: .1,.1
+					on_active: app.checkbox_click(self, self.active,app.numes[1],app.names[3])
+                MDLabel:
+                    text: "торт"
+				MDLabel:
+					id: c3
+					text:""
+                MDCheckbox:
+                    selected_color: (0,1,0,1)
+                    unselected_color:(0,0,0,1)
+                    #size_hint: .1,.1
+					on_active: app.checkbox_click(self, self.active,app.numes[2],app.names[3])
+                MDLabel:
+                    text: "бисквит"
+				MDLabel:
+					id: c4
+					text:""
+                MDCheckbox:
+                    selected_color: (0,1,0,1)
+                    unselected_color:(0,0,0,1)
+                    #size_hint: .1,.1
+					on_active: app.checkbox_click(self, self.active,app.numes[3],app.names[3])
+                MDLabel:
+                    text: "вафли"
+				MDLabel:
+					id: c5
+					text:""
+                MDCheckbox:
+                    selected_color: (0,1,0,1)
+                    unselected_color:(0,0,0,1)
+                    #size_hint: .1,.1
+					on_active: app.checkbox_click(self, self.active,app.numes[4],app.names[3])
+
+
+		Tab:
+            text: "разное"
+            MDGridLayout:
+				canvas.before:
+					Color:
+						rgba:(1,1,1,1)
+					Rectangle:
+						size: self.size
+						pos:self.pos
+						source: 'office.png'
+                cols: 3
+                #size_hint_x: 0.8
+       
+
+                MDLabel:
+                    text: "playstation 4"
+				MDLabel:
+					id: s1
+					text:""
+                MDCheckbox:
+                    selected_color: (0,1,0,1)
+                    unselected_color:(0,0,0,1)
+                    #size_hint: .1,.1
+                    on_active: app.checkbox_click(self, self.active,app.numes[0],app.names[4])
+                MDLabel:
+                    text: "GeForce RTX 3060"
+				MDLabel:
+					id: s2
+					text:""
+                MDCheckbox:
+                    selected_color: (0,1,0,1)
+                    unselected_color:(0,0,0,1)
+                    #size_hint: .1,.1
+					on_active: app.checkbox_click(self, self.active,app.numes[1],app.names[4])
+                MDLabel:
+                    text: "яхта"
+				MDLabel:
+					id: s3
+					text:""
+                MDCheckbox:
+                    selected_color: (0,1,0,1)
+                    unselected_color:(0,0,0,1)
+                    #size_hint: .1,.1
+					on_active: app.checkbox_click(self, self.active,app.numes[2],app.names[4])
+                MDLabel:
+                    text: "вилла"
+				MDLabel:
+					id: s4
+					text:""
+                MDCheckbox:
+                    selected_color: (0,1,0,1)
+                    unselected_color:(0,0,0,1)
+                    #size_hint: .1,.1
+					on_active: app.checkbox_click(self, self.active,app.numes[3],app.names[4])
+                MDLabel:
+                    text: "космический корабль"
+				MDLabel:
+					id: s5
+					text:""
+                MDCheckbox:
+                    selected_color: (0,1,0,1)
+                    unselected_color:(0,0,0,1)
+                    #size_hint: .1,.1
+					on_active: app.checkbox_click(self, self.active,app.numes[4],app.names[4])
+
+
+	MDProgressBar:
+		id: progress
+        size_hint_y: 0.1
+	MDLabel:
+		markup: True
+		id:status_label
+		text: ""
+		size_hint_y: 0.2
+		pos_hint: {"center_x":1}
